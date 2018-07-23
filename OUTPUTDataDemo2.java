@@ -31,36 +31,36 @@ File f1 = new File("D:\\JDBC\\workspace\\advance\\res" , "output.txt") ;
 			
 			ResultSetMetaData rsmd = rs.getMetaData();
 			int count = rsmd.getColumnCount();
-			StringBuffer S = new StringBuffer()  ;  // ·s¼Wªºµ{¦¡
+			StringBuffer S = new StringBuffer()  ;  // æ–°å¢çš„ç¨‹å¼
 			for(int i = 1; i <= count; i++) {
 				if(i == count) {
 					System.out.print(rsmd.getColumnLabel(i)) ;
-				S.append(rsmd.getColumnLabel(i)) ; 	 // ·s¼Wªºµ{¦¡
+				S.append(rsmd.getColumnLabel(i)) ; 	 // æ–°å¢çš„ç¨‹å¼
 				}
 				else {
 				System.out.print(rsmd.getColumnLabel(i) + ",");
-				S.append(rsmd.getColumnLabel(i)+",") ; }	 // ·s¼Wªºµ{¦¡	
+				S.append(rsmd.getColumnLabel(i)+",") ; }	 // æ–°å¢çš„ç¨‹å¼	
 			}		
-			fw.write(S.toString() + "\r\n");	 // ·s¼Wªºµ{¦¡
+			fw.write(S.toString() + "\r\n");	 // æ–°å¢çš„ç¨‹å¼
 			System.out.print("\n");
-			S = new StringBuffer() ;   // ·s¼Wªºµ{¦¡
+			S = new StringBuffer() ;   // æ–°å¢çš„ç¨‹å¼
 			
 			while(rs.next()) {
 	     		for(int i = 1; i <= count; i++)
 	     			if( i == count) {
 	     				System.out.print(rs.getString(i) ); 
-	     				S.append(rs.getString(i)+"\n") ;   // ·s¼Wªºµ{¦¡
+	     				S.append(rs.getString(i)) ;   // æ–°å¢çš„ç¨‹å¼
 	     			} else{
 	         		System.out.print(rs.getString(i) + ","); 
-	         		S.append(rs.getString(i)+",") ;// ·s¼Wªºµ{¦¡
+	         		S.append(rs.getString(i)+",") ;// æ–°å¢çš„ç¨‹å¼
 	     			}
 	     		System.out.print("\n");
-	     		fw.write(S.toString() + "\r\n"); // ·s¼Wªºµ{¦¡
-	     		S = new StringBuffer() ; // ·s¼Wªºµ{¦¡
+	     		fw.write(S.toString() + "\r\n"); // æ–°å¢çš„ç¨‹å¼
+	     		S = new StringBuffer() ; // æ–°å¢çš„ç¨‹å¼
 	     		
 			}
 			
-			fw.close(); // ·s¼Wªºµ{¦¡
+			fw.close(); // æ–°å¢çš„ç¨‹å¼
 			rs.close();
 			stmt.close();
 		} catch (SQLException e) {
